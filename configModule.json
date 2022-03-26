@@ -1,0 +1,8 @@
+{
+    "trade": {
+        "minTrade": 100
+    },
+    "work": {
+        "cooldownTime": 1200000
+    }
+}

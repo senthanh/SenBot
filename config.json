@@ -1,0 +1,25 @@
+{
+    "Port": "80",
+    "DeveloperMode": false,
+    "autoCreateDB": true,
+    "allowInbox": true,
+    "autoClean": true,
+    "commandDisabled": [],
+    "eventDisabled": [],
+    "EMAIL": "",
+    "PASSWORD": "",
+    "OTPKEY": "",
+    "BOTNAME": "SenBot",
+    "PREFIX": "-",
+    "ADMINBOT": [
+        "100008907121641"
+    ],
+    "pauseLog": true,
+    "FCAOption": {
+        "forceLogin": true,
+        "listenEvents": true,
+        "logLevel": "error",
+        "selfListen": true,
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1"
+    }
+}
