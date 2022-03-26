@@ -11,9 +11,7 @@
     "OTPKEY": "",
     "BOTNAME": "SenBot",
     "PREFIX": "-",
-    "ADMINBOT": [
-        "100008907121641"
-    ],
+    "ADMINBOT": [],
     "pauseLog": true,
     "FCAOption": {
         "forceLogin": true,
