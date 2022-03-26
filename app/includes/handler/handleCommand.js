@@ -35,24 +35,23 @@ module.exports = function ({ api, models, Users, Threads, Currencies, logger }) 
       else return api.sendMessage('Command not found!', threadID);
     }
 
+    
+    //CHECK PERMISSION
+    var permssion = 0;
+    
     var curThreadInfo;
     if (event.isGroup)
       try {
         curThreadInfo = (threadInfo.get(threadID) || await Threads.getInfo(threadID))
         if (Object.keys(curThreadInfo).length == 0) throw 'Can not get thread info!';
+        //GET NECESSARY DATA
+        const findSenderInAdminIDs = curThreadInfo.adminIDs.find(el => el.id == senderID);
+        if (ADMINBOT.includes(senderID.toString())) permssion = 2;
+        else if (!ADMINBOT.includes(senderID) && findSenderInAdminIDs) permssion = 1;
       } catch (e) {
         logger.error(e);
       }
 
-
-    //GET NECESSARY DATA
-    curThreadInfo = (threadInfo.get(threadID) || await Threads.getInfo(threadID));
-    const findSenderInAdminIDs = curThreadInfo.adminIDs.find(el => el.id == senderID);
-
-    //CHECK PERMISSION
-    var permssion = 0;
-    if (ADMINBOT.includes(senderID.toString())) permssion = 2;
-    else if (!ADMINBOT.includes(senderID) && findSenderInAdminIDs) permssion = 1;
 
     if (command.config.hasPermssion > permssion) return api.sendMessage('Can\'t use this command!', threadID, messageID);
 
