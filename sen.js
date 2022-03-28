@@ -135,12 +135,14 @@ process
 
 
         //LOGIN AND LOAD MODULES
-        if (global.config.pauseLog) require('./node_modules/@senpro/facebook-chat-api/node_modules/npmlog').pause();
 
         login({ appState }, async (error, api) => {
             if (error) return logger.error(error.error || error);
             api.setOptions(global.config.FCAOption);
             writeFileSync(appStateFile, JSON.stringify(api.getAppState(), null, "\t"));
+            
+            
+            if (global.config.pauseLog) require('./node_modules/@senpro/facebook-chat-api/node_modules/npmlog').pause();
 
             global.client.timeStart = Date.now();
 
