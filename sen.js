@@ -9,7 +9,7 @@ const senLogo = `
 const { readdirSync, writeFileSync, createReadStream } = require('fs');
 const { join } = require('path');
 const { execSync } = require('child_process');
-const login = require('@senpro/facebook-chat-api');
+const { login, pauseLog } = require('@senpro/facebook-chat-api');
 const { sequelize, Sequelize } = require("./app/includes/database");
 const logger = require('./log.js');
 
@@ -135,14 +135,13 @@ process
 
 
         //LOGIN AND LOAD MODULES
+            
+        if (global.config.FCAOption.pauseLog) pauseLog();
 
         login({ appState }, async (error, api) => {
             if (error) return logger.error(error.error || error);
             api.setOptions(global.config.FCAOption);
             writeFileSync(appStateFile, JSON.stringify(api.getAppState(), null, "\t"));
-            
-            
-            if (global.config.pauseLog) require('./node_modules/@senpro/facebook-chat-api/node_modules/npmlog').pause();
 
             global.client.timeStart = Date.now();
 
