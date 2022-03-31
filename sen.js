@@ -183,7 +183,7 @@ process
                         try {
                             for (const additionalConfig in module.config.additionalConfig) {
                                 if (typeof global.configModule[module.config.name] == 'undefined') global.configModule[module.config.name] = {};
-                                global.configModule[module.config.name][additionalConfig] = module.config.additionalConfig[additionalConfig];
+                                if (typeof global.configModule[module.config.name][additionalConfig] == 'undefined') global.configModule[module.config.name][additionalConfig] = module.config.additionalConfig[additionalConfig];
                             }
                             logger.loader('Loaded additional config for command ' + module.config.name);
                         } catch (e) {
