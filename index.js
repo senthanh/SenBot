@@ -6,7 +6,16 @@ const logger = require("./log");
 const { Port } = require('./config.json');
 
 //CHECK FOR UPDATES
-//COMMING SOON
+require('axios')
+  .get('https://raw.githubusercontent.com/senthanh/SenBot/main/package.json')
+  .then(res => {
+    const { version } = res.data;
+    const currentVersion = require('./package.json').version;
+    let compare = require('compare-versions')(currentVersion, version);
+    if (compare == -1) logger.info('Đã có phiên bản mới, hãy lên https://github.com/senthanh/SenBot để tham khảo')
+    else logger.info('Bạn đang sử dụng phiên bản mới nhất!')
+  })
+  .catch(e => logger.warn('Không thể kiểm tra cập nhật.'))
 
 /*
 CHECK NODE VERSION
