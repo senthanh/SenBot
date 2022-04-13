@@ -1,6 +1,6 @@
 {
     "name": "senbot",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A simple Facebook Messenger Bot",
     "main": "sen.js",
     "scripts": {
@@ -23,6 +23,7 @@
         "path": "^0.12.7",
         "sequelize": "^6.17.0",
         "sqlite3": "",
-        "string-similarity": "^4.0.4"
+        "string-similarity": "^4.0.4",
+        "compare-versions": "^3.6.0"
     }
 }
