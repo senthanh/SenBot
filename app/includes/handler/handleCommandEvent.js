@@ -11,7 +11,6 @@ module.exports = function ({ api, models, Users, Threads, Currencies, logger }) 
             const command = commands.get(eventReg);
             try {
                 if (command) command.handleEvent({ api, event, models, Users, Threads, Currencies });
-                return;
             } catch (error) {
                 logger.error(`COMMAND EVENT > ${command.config.name}:`);
                 console.log(error);
