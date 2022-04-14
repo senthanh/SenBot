@@ -106,7 +106,7 @@ module.exports.run = async function ({ api, event, args, Users }) {
             msg += `\n${count++}. ${user.name} - ${user.count}`;
         }
     } else if (query == 'rank') {
-        msg += 'Đồng 1 (10tn)\nĐồng 2 (30tn)\nĐồng 3 (50tn)\nBạc 1 (80 tn)\nBạc 2 (100 tn)\nBạc 3 (150 tn)\nVàng 1 ( 200 tn)\nVàng2 (250 tn)\nVàng3 (400 tn)\nVàng 4 (500 tn)\nBạch kim 1 (600 tn)\nBạch kim  2 (800 tn)\nBạch kim 3 (900 tn)\nBạch kim 4 (1000 tn)\nKim cương 1( 1100 tn)\nKim cương 2 (1200)\nKim cương 3 (1300 tn)\nKim cương 4(1400 tn)\nKim cương 5 (1500 tn)\nTinh Anh 1 (1800 tn)\n2 (2000tn)\n3 (2200tn)\n4 (2400 tn)\n5 (2500tn)\nCao thủ'
+        msg += 'Đồng 1 (10tn)\nĐồng 2 (30tn)\nĐồng 3 (50tn)\nBạc 1 (80 tn)\nBạc 2 (100 tn)\nBạc 3 (150 tn)\nVàng 1 ( 200 tn)\nVàng2 (250 tn)\nVàng3 (400 tn)\nVàng 4 (500 tn)\nBạch kim 1 (600 tn)\nBạch kim  2 (800 tn)\nBạch kim 3 (900 tn)\nBạch kim 4 (1000 tn)\nKim cương 1( 1100 tn)\nKim cương 2 (1200)\nKim cương 3 (1300 tn)\nKim cương 4(1400 tn)\nKim cương 5 (1500 tn)\nTinh Anh 1 (1800 tn)\nTinh Anh 2 (2000tn)\nTinh Anh 3 (2200tn)\nTinh Anh 4 (2400 tn)\nTinh Anh 5 (2500tn)\nCao thủ'
     } else if (!query) {
         let userID = senderID;
         if (Object.keys(mentions).length > 0) {
